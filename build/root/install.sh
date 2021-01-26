@@ -13,7 +13,7 @@ if [[ ! -z "${OS_ARCH}" ]]; then
 	if [[ "${OS_ARCH}" == "arch" ]]; then
 		OS_ARCH="x86-64"
 	else
-		OS_ARCH="aarch64"
+		OS_ARCH="armv7h"
 	fi
 	echo "[info] OS_ARCH defined as '${OS_ARCH}'"
 else
@@ -25,7 +25,7 @@ fi
 ####
 
 # call pacman db and package updater script
-source upd.sh
+# source upd.sh
 
 # define pacman packages
 pacman_packages="qbittorrent-nox python geoip"
@@ -42,7 +42,7 @@ fi
 aur_packages=""
 
 # call aur install script (arch user repo) - note true required due to autodl-irssi error during install
-source aur.sh
+# source aur.sh
 
 # custom
 ####
@@ -52,8 +52,8 @@ source aur.sh
 # object file: No such file or directory.' when running this container on 
 # hosts with older kernels (centos, mac os). alternative workaround to this
 # is for the user to upgrade the kernel on their host.
-pacman -S binutils --needed --noconfirm
-strip --remove-section=.note.ABI-tag /usr/lib64/libQt5Core.so.5
+#pacman -S binutils --needed --noconfirm
+#strip --remove-section=.note.ABI-tag /usr/lib64/libQt5Core.so.5
 
 # container perms
 ####

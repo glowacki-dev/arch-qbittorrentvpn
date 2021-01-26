@@ -1,4 +1,4 @@
-FROM binhex/arch-int-vpn:latest
+FROM arch-int-vpn
 MAINTAINER binhex
 
 # additional files
